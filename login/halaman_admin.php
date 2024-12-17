@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
-
+  <link rel='icon' href='../img/foto1.jpeg'> 
   <title>Document</title>
 </head>
 
@@ -69,41 +69,41 @@
   <div class="container px-4 py-5">
     <h2 class="pb-2 border-bottom">menyediakan</h2>
 
-      <div class="col">
-        <div class="row row-cols-1 row-cols-sm-2 g-4">
-          <div class="col d-flex flex-column gap-2">
-            <div class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3">
-              <svg class="bi" width="1em" height="1em">
-                <use xlink:href="#collection"></use>
-              </svg>
-            </div>
-            <h4 class="fw-semibold mb-0 text-body-emphasis">Service berat</h4>
-            <p class="text-body-secondary"> Hal yang diluar penggantian rutin 10.000 KM ini yang sering disebut service berkala besar.</p>
+    <div class="col">
+      <div class="row row-cols-1 row-cols-sm-2 g-4">
+        <div class="col d-flex flex-column gap-2">
+          <div class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3">
+            <svg class="bi" width="1em" height="1em">
+              <use xlink:href="#collection"></use>
+            </svg>
           </div>
+          <h4 class="fw-semibold mb-0 text-body-emphasis">Service berat</h4>
+          <p class="text-body-secondary"> Hal yang diluar penggantian rutin 10.000 KM ini yang sering disebut service berkala besar.</p>
+        </div>
 
-          <div class="col d-flex flex-column gap-2">
-            <div class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3">
-              <svg class="bi" width="1em" height="1em">
-                <use xlink:href="#gear-fill"></use>
-              </svg>
-            </div>
-            <h4 class="fw-semibold mb-0 text-body-emphasis">Service Ringan</h4>
-            <p class="text-body-secondary">Periksa beberapa komponen seperti stabilizer, bushing, tie roda, dan ball joint. Komponen ini perlu diganti setiap 5 tahun sekali.</p>
+        <div class="col d-flex flex-column gap-2">
+          <div class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3">
+            <svg class="bi" width="1em" height="1em">
+              <use xlink:href="#gear-fill"></use>
+            </svg>
           </div>
+          <h4 class="fw-semibold mb-0 text-body-emphasis">Service Ringan</h4>
+          <p class="text-body-secondary">Periksa beberapa komponen seperti stabilizer, bushing, tie roda, dan ball joint. Komponen ini perlu diganti setiap 5 tahun sekali.</p>
+        </div>
 
-          <div class="col d-flex flex-column gap-2">
-            <div class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3">
-              <svg class="bi" width="1em" height="1em">
-                <use xlink:href="#speedometer"></use>
-              </svg>
-            </div>
-            <h4 class="fw-semibold mb-0 text-body-emphasis">Pengecekan</h4>
-            <p class="text-body-secondary">Pengecekan sistem rem, termasuk ketebalan kampas rem, ketinggian minyak rem, dan fungsi rem
-              Pengecekan filter udara, filter bensin, filter AC, dan filter oli</p>
+        <div class="col d-flex flex-column gap-2">
+          <div class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3">
+            <svg class="bi" width="1em" height="1em">
+              <use xlink:href="#speedometer"></use>
+            </svg>
           </div>
+          <h4 class="fw-semibold mb-0 text-body-emphasis">Pengecekan</h4>
+          <p class="text-body-secondary">Pengecekan sistem rem, termasuk ketebalan kampas rem, ketinggian minyak rem, dan fungsi rem
+            Pengecekan filter udara, filter bensin, filter AC, dan filter oli</p>
         </div>
       </div>
     </div>
+  </div>
   </div>
 
 
