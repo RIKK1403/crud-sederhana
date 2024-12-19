@@ -1,59 +1,97 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel='icon' href='../img/foto1.jpeg'> 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+<html>
 
-    <title>Artikel</title>
+<head>
+  <link rel='icon' href='../img/foto1.jpeg'>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
 </head>
+<title>
+  HALLO BENGKEL ARTIKEL</title>
+
 <body>
-    <center>
-        <br>
-        <h3>Halaman Artikel</h3>
-        <h6>halaman baru menggunakan bootstrap</h6>
-        <a href="/login/halaman_admin.php" class="btn btn-primary">kembali</a>
-    </center>
-    
-    <div class="container px-4 py-5" id="featured-3">
-    <h2 class="pb-2 border-bottom">Service</h2>
-    <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
-      <div class="feature col">
-        <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
-          <svg class="bi" width="1em" height="1em"><use xlink:href="#collection"></use></svg>
-        </div>
-        <h3 class="fs-2 text-body-emphasis">Service berat</h3>
-        <p>Hal yang diluar penggantian rutin 10.000 KM ini yang sering disebut service berkala besar.</p>
-        <a href="#" class="icon-link">
-          Call to action
-          <svg class="bi"><use xlink:href="#chevron-right"></use></svg>
-        </a>
-      </div>
-      <div class="feature col">
-        <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
-          <svg class="bi" width="1em" height="1em"><use xlink:href="#people-circle"></use></svg>
-        </div>
-        <h3 class="fs-2 text-body-emphasis">Service Ringan</h3>
-        <p>Periksa beberapa komponen seperti stabilizer, bushing, tie roda, dan ball joint. Komponen ini perlu diganti setiap 5 tahun sekali.</p>
-        <a href="#" class="icon-link">
-          Call to action
-          <svg class="bi"><use xlink:href="#chevron-right"></use></svg>
-        </a>
-      </div>
-      <div class="feature col">
-        <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
-          <svg class="bi" width="1em" height="1em"><use xlink:href="#toggles2"></use></svg>
-        </div>
-        <h3 class="fs-2 text-body-emphasis">Pengecekan</h3>
-        <p>Pengecekan sistem rem, termasuk ketebalan kampas rem, ketinggian minyak rem, dan fungsi rem
-        Pengecekan filter udara, filter bensin, filter AC, dan filter oli</p>
-        <a href="#" class="icon-link">
-          Call to action
-          <svg class="bi"><use xlink:href="#chevron-right"></use></svg>
-        </a>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="../login/halaman_admin.php">HALLO BENGKEL</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
       </div>
     </div>
+  </nav>
+  <div class="container">
+    <br>
+    <h4>
+      <center>Artikel</center>
+    </h4>
+    <?php
+
+    include "../koneksi.php";
+
+    //Cek apakah ada kiriman form dari method post
+    if (isset($_GET['id'])) {
+      $id = htmlspecialchars($_GET["id"]);
+
+      $sql = "delete from artikel where id='$id' ";
+      $hasil = mysqli_query($kon, $sql);
+
+      //Kondisi apakah berhasil atau tidak
+      if ($hasil) {
+        header("Location:index.php");
+      } else {
+        echo "<div class='alert alert-danger'> Data Gagal dihapus.</div>";
+      }
+    }
+    ?>
+
+
+    <tr class="table-danger">
+      <br>
+      <thead>
+        <a href="create.php" class="btn btn-primary" role="button">Tambah Data</a>
+        <tr>
+          <table class="my-3 table table-bordered">
+            <tr class="table-primary">
+              <th>No</th>
+              <th>Judul</th>
+              <th>Deskripsi</th>
+              <th>Gambar</th>
+              <th>Status</th>
+              <th colspan='2'>Aksi</th>
+
+            </tr>
+      </thead>
+
+      <?php
+      include "../koneksi.php";
+      $sql = "select * from artikel";
+
+      $hasil = mysqli_query($kon, $sql);
+      $no = 0;
+      while ($data = mysqli_fetch_array($hasil)) {
+        $no++;
+
+      ?>
+        <tbody>
+          <tr>
+            <td><?php echo $no; ?></td>
+            <td><?php echo $data["judul"]; ?></td>
+            <td><?php echo $data["deskripsi"];   ?></td>
+            <td><?php echo $data["gambar"];   ?></td>
+            <td><?php echo $data["is_posting"];   ?></td>
+            <td>
+              <a href="update.php?id=<?php echo htmlspecialchars($data['id']); ?>" class="btn btn-warning" role="button">Update</a>
+              <a href="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>?id=<?php echo $data['id']; ?>" class="btn btn-danger" role="button">Delete</a>
+              <?php
+              ?>
+            </td>
+          </tr>
+        </tbody>
+      <?php
+      }
+      ?>
+      </table>
   </div>
 </body>
+
 </html>
