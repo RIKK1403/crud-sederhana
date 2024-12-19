@@ -3,11 +3,11 @@ import sys
 
 
 lyrics = [
-    ("\ntuktuktuktuk", 0.10),
-  ("\ntuktuktuktuk", 0.10),
-    ("\ntuktuktuktuk", 0.10),
-      ("\ntuktuktuktuk", 0.10),
-        ("\ntuktuktuktuk", 0.10),
+    ("\nI try (Im not what) to live in black and white But Im so blue (but Im not what you need", 0.10),
+  ("\nI'd like (not what you need) to mean it when I say I'm over you", 0.10),
+    ("\nBut that's still not true, true And I'm still so blue (and it's not true)", 0.10),
+      ("\nI'm true blue, true blue", 0.10),
+        ("\nI'm true blue", 0.10),
 ]
 
 delays = [1.8, 1.8, 1.1, 6.1,1.1]
