@@ -3,14 +3,13 @@ import sys
 
 
 lyrics = [
-    ("\nI try (Im not what) to live in black and white But Im so blue (but Im not what you need", 0.10),
-  ("\nI'd like (not what you need) to mean it when I say I'm over you", 0.10),
-    ("\nBut that's still not true, true And I'm still so blue (and it's not true)", 0.10),
-      ("\nI'm true blue, true blue", 0.10),
-        ("\nI'm true blue", 0.10),
+    ("\nYour morning eyes, I could stare like watching stars", 0.13),
+  ("\nI could walk you by... and I'll tell without a thought", 0.12),
+    ("\nYou'd be mine.... would you mind if I took your hand tonight?", 0.11),
+      ("\nKnow you're all that I want... in this life", 0.12),
 ]
 
-delays = [1.8, 1.8, 1.1, 6.1,1.1]
+delays = [1.5, 1.2, 1.2, 6.1,]
 
 def animate_text(text, char_delay):
     for char in text:
